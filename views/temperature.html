@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Temperature Converter | Wiz Utilities</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body class="utility-page">
+
+<div class="utility-box">
+  <a href="../dashboard.html" class="btn btn-back">⬅️ Back to Dashboard</a>
+  <h1>🌡️ Temperature Converter</h1>
+
+  <input type="number" id="c" placeholder="Celsius">
+  <button class="btn-big" onclick="convert()">Convert</button>
+  <div id="result" class="result-box"></div>
+</div>
+
+<script>
+function convert() {
+  const c = document.getElementById("c").value;
+  if (!c && c !== 0) return alert("Enter a value");
+  const f = (Number(c) * 9/5 + 32).toFixed(2);
+  document.getElementById("result").innerText = `${c}°C = ${f}°F`;
+}
+</script>
+
+</body>
+</html>

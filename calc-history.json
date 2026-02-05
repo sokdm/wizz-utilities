@@ -1,0 +1,58 @@
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body { margin: 0; padding: 0; background: 
+  linear-gradient(135deg, #0f2027, #203a43, 
+  #2c5364);[]
+  color: white; min-height: 100vh;
+}
+/* Welcome */ .welcome { display: flex; 
+  justify-content: center; align-items: center;
+}
+.center-card { background: rgba(255,255,255,0.1); 
+  padding: 40px; border-radius: 20px; text-align: 
+  center;
+}
+.btn-big { display: inline-block; margin-top: 20px; 
+  padding: 18px 40px; background: #00e6e6; color: 
+  black; font-size: 22px; border-radius: 50px; 
+  text-decoration: none;
+}
+/* Dashboard */ .dashboard-bg { text-align: center; 
+  padding: 30px;
+}
+.title { font-size: 42px;
+}
+.subtitle { opacity: 0.8; margin-bottom: 30px;
+}
+.grid { display: grid; grid-template-columns: 
+  repeat(auto-fit, minmax(220px, 1fr)); gap: 20px;
+}
+.card { background: rgba(255,255,255,0.15); padding: 
+  30px; border-radius: 20px; font-size: 22px; 
+  text-decoration: none; color: white; transition: 
+  0.3s;
+}
+.card:hover { background: rgba(0,230,230,0.4); 
+  transform: scale(1.05);
+}
+/* Utilities */ .utility { padding: 30px; text-align: 
+  center;
+}
+.big-input { width: 80%; padding: 18px; font-size: 
+  22px; border-radius: 15px; border: none; margin: 
+  15px 0;
+}
+.btn { padding: 15px 35px; font-size: 20px; 
+  border-radius: 40px; border: none; background: 
+  #00e6e6;
+  cursor: pointer;
+}
+.result { margin-top: 20px; font-size: 24px;
+}
+.back { display: inline-block; margin-bottom: 20px; 
+  text-decoration: none; color: #00e6e6;
+}
+footer { margin-top: 40px; opacity: 0.6;
+}

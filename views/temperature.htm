@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Temperature Converter</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a href="index.html">⬅️ Back to Dashboard</a>
+  <h1>Temperature Converter</h1>
+
+  <input type="number" id="tempValue" placeholder="Enter value">
+  <select id="tempFrom">
+    <option value="C">°C</option>
+    <option value="F">°F</option>
+  </select>
+  <select id="tempTo">
+    <option value="C">°C</option>
+    <option value="F">°F</option>
+  </select>
+  <button onclick="convertTemp()">Convert</button>
+  <div id="tempResult"></div>
+
+  <script>
+    function convertTemp() {
+      const val = parseFloat(document.getElementById('tempValue').value);
+      const from = document.getElementById('tempFrom').value;
+      const to = document.getElementById('tempTo').value;
+      if (isNaN(val)) return alert("Enter a number");
+
+      let result;
+      if (from === "C" && to === "F") result = val * 9/5 + 32;
+      else if (from === "F" && to === "C") result = (val - 32) * 5/9;
+      else result = val;
+
+      document.getElementById('tempResult').innerText = `${val} ${from} = ${result.toFixed(2)} ${to}`;
+      saveHistory(`${val} ${from} → ${result.toFixed(2)} ${to}`);
+    }
+
+    function saveHistory(entry) {
+      let history = JSON.parse(localStorage.getItem('temperatureHistory') || '[]');
+      history.push(entry);
+      localStorage.setItem('temperatureHistory', JSON.stringify(history));
+    }
+  </script>
+</body>
+</html>

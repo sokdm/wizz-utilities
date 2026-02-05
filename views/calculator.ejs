@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Calculator</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="tool-container">
+    <h1>🧮 Calculator</h1>
+
+    <form method="POST" action="/calculator">
+      <input type="text" name="expression" placeholder="Enter expression" required>
+      <button type="submit">Calculate</button>
+    </form>
+
+    <% if (result !== null) { %>
+      <div class="result">
+        Result: <strong><%= result %></strong>
+      </div>
+    <% } %>
+
+    <div class="history">
+      <h3>History:</h3>
+      <ul>
+        <% history.forEach(item => { %>
+          <li><%= item.expression %> = <%= item.result %></li>
+        <% }) %>
+      </ul>
+    </div>
+
+    <a class="back-button" href="/">⬅ Back to Dashboard</a>
+  </div>
+</body>
+</html>

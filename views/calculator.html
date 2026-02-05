@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Calculator | Wiz Utilities</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body class="utility-page">
+  <div class="utility-box">
+    <a href="../dashboard.html" class="btn btn-back">⬅️ Back to Dashboard</a>
+    <h1>🧮 Calculator</h1>
+    <input type="text" id="calc" placeholder="Enter expression">
+    <button class="btn-big" onclick="calculate()">Calculate</button>
+    <div id="result" class="result-box"></div>
+  </div>
+
+  <script>
+    function calculate() {
+      const exp = document.getElementById("calc").value;
+      if(!exp) return alert("Enter expression");
+      try { document.getElementById("result").innerText = eval(exp); }
+      catch { alert("Invalid expression"); }
+    }
+  </script>
+</body>
+</html>
