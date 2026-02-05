@@ -3,13 +3,47 @@
 <head>
   <meta charset="UTF-8">
   <title>Welcome | Wiz Utilities</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    /* Override background color for welcome page */
+    body.welcome-box {
+      background: linear-gradient(135deg, #2ecc71, #27ae60); /* green gradient */
+      color: #fff; /* make all text white */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      min-height: 100vh;
+      text-align: center;
+      padding: 30px 15px;
+    }
+
+    /* Make Get Started button big and stand out */
+    .welcome-box a {
+      font-size: 1.8rem;
+      padding: 28px 25px;
+      margin-top: 30px;
+      background: #16a085;
+      border-radius: 28px;
+      text-decoration: none;
+      color: #fff;
+      font-weight: 700;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .welcome-box a:hover {
+      transform: scale(1.05);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+    }
+  </style>
 </head>
-<body class="welcome-page">
-  <div class="centered-container">
-    <h1>Welcome to Wiz Utilities</h1>
-    <p>Simple tools you use every day</p>
-    <a href="dashboard.html" class="btn btn-start">Get Started 🚀</a>
-  </div>
+<body class="welcome-box">
+  <h1>Welcome to Wiz Utilities</h1>
+  <p>Made to make everyday life easy</p>
+  <p>A project built entirely on phone</p>
+  <p>Support my work in every way you can to keep me going 🙏</p>
+
+  <!-- Get Started Button -->
+  <a href="dashboard.html">🚀 Get Started</a>
 </body>
 </html>

@@ -7,22 +7,22 @@
 </head>
 <body class="utility-page">
   <div class="utility-box">
-    <a href="../dashboard.html" class="btn btn-back">⬅️ Back to Dashboard</a>
+    <a href="dashboard.html" class="btn-back">⬅️ Back to Dashboard</a>
     <h1>📷 QR Code Generator</h1>
-    <input type="text" id="qrtext" placeholder="Enter text">
-    <button class="btn-big" onclick="generateQR()">Generate QR</button>
-    <div id="result" class="result-box"></div>
+    <input type="text" id="qrInput" placeholder="Enter text/URL">
+    <button class="btn-big" onclick="generateQR()">Generate</button>
+    <div id="qrResult" class="result-box"></div>
   </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
   <script>
-    function generateQR() {
-      const text = document.getElementById("qrtext").value;
-      if(!text) return alert("Enter text");
-      QRCode.toDataURL(text, {width:250}, function (err, url) {
-        if(err) return alert("Error");
-        document.getElementById("result").innerHTML = `<img src="${url}" alt="QR Code">`;
-      });
+    function generateQR(){
+      const text = document.getElementById('qrInput').value;
+      if(!text){ alert("Enter text"); return; }
+      const qr = new QRious({element: document.createElement('canvas'), value: text, size: 250});
+      const container = document.getElementById('qrResult');
+      container.innerHTML = '';
+      container.appendChild(qr.canvas);
     }
   </script>
 </body>

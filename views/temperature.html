@@ -6,24 +6,21 @@
   <link rel="stylesheet" href="../style.css">
 </head>
 <body class="utility-page">
+  <div class="utility-box">
+    <a href="dashboard.html" class="btn-back">⬅️ Back to Dashboard</a>
+    <h1>🌡️ Temperature Converter</h1>
+    <input type="number" id="tempInput" placeholder="Enter Celsius">
+    <button class="btn-big" onclick="convertTemp()">Convert to Fahrenheit</button>
+    <div id="tempResult" class="result-box"></div>
+  </div>
 
-<div class="utility-box">
-  <a href="../dashboard.html" class="btn btn-back">⬅️ Back to Dashboard</a>
-  <h1>🌡️ Temperature Converter</h1>
-
-  <input type="number" id="c" placeholder="Celsius">
-  <button class="btn-big" onclick="convert()">Convert</button>
-  <div id="result" class="result-box"></div>
-</div>
-
-<script>
-function convert() {
-  const c = document.getElementById("c").value;
-  if (!c && c !== 0) return alert("Enter a value");
-  const f = (Number(c) * 9/5 + 32).toFixed(2);
-  document.getElementById("result").innerText = `${c}°C = ${f}°F`;
-}
-</script>
-
+  <script>
+    function convertTemp(){
+      const c = parseFloat(document.getElementById('tempInput').value);
+      if(isNaN(c)){ alert("Enter a number"); return; }
+      const f = (c * 9/5) + 32;
+      document.getElementById('tempResult').innerText = `${c}°C = ${f.toFixed(2)}°F`;
+    }
+  </script>
 </body>
 </html>

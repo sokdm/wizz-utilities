@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Currency Converter | Wiz Utilities</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body class="utility-page">
+  <div class="utility-box">
+    <a href="dashboard.html" class="btn-back">⬅️ Back to Dashboard</a>
+    <h1>💱 Currency Converter</h1>
+    <input type="number" id="amount" placeholder="Enter amount">
+    <select id="currencyFrom">
+      <option value="USD">USD</option>
+      <option value="EUR">EUR</option>
+      <option value="GBP">GBP</option>
+    </select>
+    <select id="currencyTo">
+      <option value="USD">USD</option>
+      <option value="EUR">EUR</option>
+      <option value="GBP">GBP</option>
+    </select>
+    <button class="btn-big" onclick="convertCurrency()">Convert</button>
+    <div id="result" class="result-box"></div>
+  </div>
+
+  <script>
+    function convertCurrency() {
+      const amount = parseFloat(document.getElementById("amount").value);
+      const from = document.getElementById("currencyFrom").value;
+      const to = document.getElementById("currencyTo").value;
+      if(!amount) return alert("Enter amount");
+
+      // Simple mock conversion rates
+      const rates = {USD:1, EUR:0.95, GBP:0.82};
+      const result = (amount / rates[from] * rates[to]).toFixed(2);
+      document.getElementById("result").innerText = `${amount} ${from} = ${result} ${to}`;
+    }
+  </script>
+</body>
+</html>

@@ -3,23 +3,55 @@
 <head>
   <meta charset="UTF-8">
   <title>Dashboard | Wiz Utilities</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    /* Main Dashboard Background */
+    body.dashboard {
+      background: linear-gradient(135deg, #3498db, #2980b9); /* blue gradient */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      min-height: 100vh;
+      color: #fff;
+      padding: 30px 15px;
+      text-align: center;
+    }
+
+    /* Make dashboard buttons bigger and nicely spaced */
+    body.dashboard a {
+      font-size: 1.7rem;
+      padding: 28px 25px;
+      margin-bottom: 20px;
+      border-radius: 28px;
+      text-decoration: none;
+      color: #fff;
+      font-weight: 700;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    body.dashboard a:hover {
+      transform: scale(1.05);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+    }
+  </style>
 </head>
-<body>
+<body class="dashboard">
   <h1>Wiz Utilities</h1>
-  <p>Simple tools you use every day</p>
+  <p>Choose a tool</p>
 
-  <div class="dashboard">
-    <a href="views/password.html" class="utility-btn">🔐 Password Generator</a>
-    <a href="views/calculator.html" class="utility-btn">🧮 Calculator</a>
-    <a href="views/temperature.html" class="utility-btn">🌡️ Temperature Converter</a>
-    <a href="views/qr.html" class="utility-btn">📷 QR Code Generator</a>
-    <a href="views/unit.html" class="utility-btn">📏 Unit Converter</a>
-    <a href="views/weather.html" class="utility-btn">☁️ Weather Checker</a>
-  </div>
+  <!-- Utilities -->
+  <a href="calculator.html" style="background:#ff6b6b;">🧮 Calculator</a>
+  <a href="temperature.html" style="background:#feca57;">🌡️ Temperature Converter</a>
+  <a href="unit.html" style="background:#54a0ff;">📏 Unit Converter</a>
+  <a href="qr.html" style="background:#1dd1a1;">📷 QR Code Generator</a>
+  <a href="weather.html" style="background:#5f27cd;">☁️ Weather Checker</a>
+  <a href="password.html" style="background:#ff9f43;">🔐 Password Generator</a>
+  <a href="currency.html" style="background:#10ac84;">💱 Currency Converter</a>
 
-  <footer>
-    <p>Built with ❤️ by Wiz</p>
-  </footer>
+  <!-- Feature Request Button -->
+  <a href="mailto:wsdmpresh@gmail.com" style="background:#1abc9c;" target="_blank" title="Click to request a new utility">
+    📩 Request a Feature
+  </a>
 </body>
 </html>

@@ -6,41 +6,21 @@
   <link rel="stylesheet" href="../style.css">
 </head>
 <body class="utility-page">
+  <div class="utility-box">
+    <a href="dashboard.html" class="btn-back">⬅️ Back to Dashboard</a>
+    <h1>📏 Unit Converter</h1>
+    <input type="number" id="unitInput" placeholder="Enter meters">
+    <button class="btn-big" onclick="convertUnit()">Convert to feet</button>
+    <div id="unitResult" class="result-box"></div>
+  </div>
 
-<div class="utility-box">
-  <a href="../dashboard.html" class="btn btn-back">⬅️ Back to Dashboard</a>
-  <h1>📏 Unit Converter</h1>
-
-  <input type="number" id="value" placeholder="Enter value">
-  <select id="unitFrom">
-    <option value="m">Meters</option>
-    <option value="km">Kilometers</option>
-    <option value="ft">Feet</option>
-    <option value="mi">Miles</option>
-  </select>
-  <select id="unitTo">
-    <option value="m">Meters</option>
-    <option value="km">Kilometers</option>
-    <option value="ft">Feet</option>
-    <option value="mi">Miles</option>
-  </select>
-  <button class="btn-big" onclick="convertUnit()">Convert</button>
-  <div id="result" class="result-box"></div>
-</div>
-
-<script>
-function convertUnit() {
-  const val = Number(document.getElementById("value").value);
-  const from = document.getElementById("unitFrom").value;
-  const to = document.getElementById("unitTo").value;
-  if (isNaN(val)) return alert("Enter a valid number");
-
-  const meters = { m: 1, km: 1000, ft: 0.3048, mi: 1609.34 };
-  const converted = (val * meters[from] / meters[to]).toFixed(4);
-
-  document.getElementById("result").innerText = `${val} ${from} = ${converted} ${to}`;
-}
-</script>
-
+  <script>
+    function convertUnit(){
+      const m = parseFloat(document.getElementById('unitInput').value);
+      if(isNaN(m)){ alert("Enter a number"); return; }
+      const f = m * 3.28084;
+      document.getElementById('unitResult').innerText = `${m} meters = ${f.toFixed(2)} feet`;
+    }
+  </script>
 </body>
 </html>
